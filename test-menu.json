@@ -51,8 +51,8 @@
           "size": 3,
           "datum": 4,
           "color": "0x0000",
-          "bgColor": "0xd4a0",
-          "content": "Icon 0"
+          "bgColor": "0xFFE0",
+          "content": "0"
         }
       ]
     },
