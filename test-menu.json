@@ -71,6 +71,16 @@
           "bgColor": "0x0000"
         },
         {
+          "type": "fillSmoothRoundRect",
+          "x": 110,
+          "y": 35,
+          "w": 100,
+          "h": 100,
+          "r": 10,
+          "color": "0xfba0",
+          "bgColor": "0xd4a0"
+        },
+        {
           "type": "text",
           "x": 160,
           "y": 85,
