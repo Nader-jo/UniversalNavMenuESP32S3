@@ -22,7 +22,7 @@
           "datum": 4,
           "color": "0x0000",
           "bgColor": "0xdec0",
-          "content": "0"
+          "content": "Icon 0"
         }
       ]
     },
@@ -48,7 +48,7 @@
           "datum": 4,
           "color": "0x0000",
           "bgColor": "0xdec0",
-          "content": "1"
+          "content": "Icon 1"
         }
       ]
     },
@@ -74,7 +74,7 @@
           "datum": 4,
           "color": "0x0000",
           "bgColor": "0xdec0",
-          "content": "2"
+          "content": "Icon 2"
         }
       ]
     },
@@ -100,7 +100,7 @@
           "datum": 4,
           "color": "0x0000",
           "bgColor": "0xdec0",
-          "content": "3"
+          "content": "Icon 3"
         }
       ]
     },
@@ -126,7 +126,7 @@
           "datum": 4,
           "color": "0x0000",
           "bgColor": "0xdec0",
-          "content": "4"
+          "content": "Icon 4"
         }
       ]
     }
