@@ -149,24 +149,61 @@
       "backgroundColor": "0x0000",
       "elements": [
         {
-          "type": "fillSmoothRoundRect",
-          "x": 100,
-          "y": 25,
-          "w": 120,
-          "h": 120,
+          "type": "fillRect",
+          "x": 10,
+          "y": 20,
+          "w": 50,
+          "h": 40,
+          "color": "0xF800"
+        },
+        {
+          "type": "drawRect",
+          "x": 70,
+          "y": 20,
+          "w": 50,
+          "h": 40,
+          "color": "0x07E0"
+        },
+        {
+          "type": "fillCircle",
+          "x": 50,
+          "y": 100,
+          "r": 20,
+          "color": "0x001F"
+        },
+        {
+          "type": "drawCircle",
+          "x": 120,
+          "y": 100,
+          "r": 20,
+          "color": "0xFFE0"
+        },
+        {
+          "type": "drawLine",
+          "x0": 0,
+          "y0": 0,
+          "x1": 100,
+          "y1": 50,
+          "color": "0xFFFF"
+        },
+        {
+          "type": "fillSmoothCircle",
+          "x": 200,
+          "y": 40,
           "r": 15,
-          "color": "0xd4a0",
+          "color": "0x07FF",
           "bgColor": "0x0000"
         },
         {
-          "type": "text",
-          "x": 160,
-          "y": 85,
-          "size": 3,
-          "datum": 4,
-          "color": "0x0000",
-          "bgColor": "0xd4a0",
-          "content": "Icon 4"
+          "type": "drawSmoothArc",
+          "x": 200,
+          "y": 100,
+          "rOuter": 30,
+          "rInner": 20,
+          "start": 0,
+          "end": 180,
+          "color": "0xF81F",
+          "bgColor": "0x0000"
         }
       ]
     }
