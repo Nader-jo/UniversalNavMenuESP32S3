@@ -385,10 +385,18 @@
       "backgroundColor": "0x0000",
       "elements": [
         {
+          "type": "fillRect",
+          "x": 75,
+          "y": 15,
+          "w": 90,
+          "h": 60,
+          "color": "0xfbe0"
+        },
+        {
           "type": "fillSmoothCircle",
           "x": 120,
-          "y": 70,
-          "r": 30,
+          "y": 60,
+          "r": 35,
           "color": "0xffe0",
           "bgColor": "0x0000"
         },
@@ -420,14 +428,14 @@
           "type": "fillSmoothCircle",
           "x": 120,
           "y": 90,
-          "r": 20,
+          "r": 25,
           "color": "0xaebf",
           "bgColor": "0x0000"
         },
         {
           "type": "fillRect",
           "x": 100,
-          "y": 100,
+          "y": 70,
           "w": 120,
           "h": 60,
           "color": "0xaebf"
