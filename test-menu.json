@@ -410,14 +410,14 @@
           "type": "fillSmoothCircle",
           "x": 120,
           "y": 60,
-          "r": 35,
+          "r": 30,
           "color": "0xffe0",
           "bgColor": "0xfbe0"
         },
         {
           "type": "fillSmoothCircle",
           "x": 170,
-          "y": 70,
+          "y": 75,
           "r": 35,
           "color": "0xaebf",
           "bgColor": "0x0000"
