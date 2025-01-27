@@ -200,9 +200,9 @@
       "elements": [
         {
           "type": "fillSmoothRoundRect",
-          "x": 150,
+          "x": 145,
           "y": 10,
-          "w": 20,
+          "w": 30,
           "h": 15,
           "r": 3,
           "color": "0xb596",
@@ -212,7 +212,7 @@
           "type": "fillSmoothCircle",
           "x": 160,
           "y": 75,
-          "r": 50,
+          "r": 45,
           "color": "0x07FF",
           "bgColor": "0x0000"
         },
@@ -220,7 +220,7 @@
           "type": "fillSmoothCircle",
           "x": 160,
           "y": 75,
-          "r": 45,
+          "r": 40,
           "color": "0xFFFF",
           "bgColor": "0x07FF"
         },
