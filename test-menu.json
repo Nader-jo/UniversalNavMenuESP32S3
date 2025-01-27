@@ -64,6 +64,23 @@
           "bgColor": "0xFFE0",
           "content": "0"
         }
+      ],
+      "subMenu": [
+        {
+          "backgroundColor": "0x0000",
+          "elements": [
+            {
+              "type": "text",
+              "x": 160,
+              "y": 85,
+              "size": 3,
+              "datum": 4,
+              "color": "0x0000",
+              "bgColor": "0xFFE0",
+              "content": "0-0"
+            }
+          ]
+        }
       ]
     },
     {
@@ -192,6 +209,23 @@
           "bgColor": "0x0000",
           "content": "Crypto"
         }
+      ],
+      "subMenu": [
+        {
+          "backgroundColor": "0x0000",
+          "elements": [
+            {
+              "type": "text",
+              "x": 160,
+              "y": 85,
+              "size": 3,
+              "datum": 4,
+              "color": "0x0000",
+              "bgColor": "0xFFE0",
+              "content": "Crypto"
+            }
+          ]
+        }
       ]
     },
     {
@@ -268,6 +302,23 @@
           "bgColor": "0x0000",
           "content": "Timer"
         }
+      ],
+      "subMenu": [
+        {
+          "backgroundColor": "0x0000",
+          "elements": [
+            {
+              "type": "text",
+              "x": 160,
+              "y": 85,
+              "size": 3,
+              "datum": 4,
+              "color": "0x0000",
+              "bgColor": "0xFFE0",
+              "content": "Timer"
+            }
+          ]
+        }
       ]
     },
     {
@@ -342,6 +393,23 @@
           "bgColor": "0x0000",
           "content": "Tasks"
         }
+      ],
+      "subMenu": [
+        {
+          "backgroundColor": "0x0000",
+          "elements": [
+            {
+              "type": "text",
+              "x": 160,
+              "y": 85,
+              "size": 3,
+              "datum": 4,
+              "color": "0x0000",
+              "bgColor": "0xFFE0",
+              "content": "Tasks"
+            }
+          ]
+        }
       ]
     },
     {
@@ -391,6 +459,23 @@
           "color": "0xFFFF",
           "bgColor": "0x0000",
           "content": "Messages"
+        }
+      ],
+      "subMenu": [
+        {
+          "backgroundColor": "0x0000",
+          "elements": [
+            {
+              "type": "text",
+              "x": 160,
+              "y": 85,
+              "size": 3,
+              "datum": 4,
+              "color": "0x0000",
+              "bgColor": "0xFFE0",
+              "content": "Messages"
+            }
+          ]
         }
       ]
     },
@@ -464,68 +549,22 @@
           "bgColor": "0x0000",
           "content": "Weather"
         }
-      ]
-    },
-    {
-      "id": 6,
-      "backgroundColor": "0x0000",
-      "elements": [
+      ],
+      "subMenu": [
         {
-          "type": "fillRect",
-          "x": 70,
-          "y": 20,
-          "w": 50,
-          "h": 40,
-          "color": "0xF800"
-        },
-        {
-          "type": "drawRect",
-          "x": 140,
-          "y": 20,
-          "w": 50,
-          "h": 40,
-          "color": "0x07E0"
-        },
-        {
-          "type": "fillCircle",
-          "x": 120,
-          "y": 100,
-          "r": 20,
-          "color": "0x001F"
-        },
-        {
-          "type": "drawCircle",
-          "x": 180,
-          "y": 100,
-          "r": 20,
-          "color": "0xFFE0"
-        },
-        {
-          "type": "drawLine",
-          "x0": 5,
-          "y0": 5,
-          "x1": 315,
-          "y1": 165,
-          "color": "0xFFFF"
-        },
-        {
-          "type": "fillSmoothCircle",
-          "x": 260,
-          "y": 40,
-          "r": 15,
-          "color": "0x07FF",
-          "bgColor": "0x0000"
-        },
-        {
-          "type": "drawSmoothArc",
-          "x": 260,
-          "y": 100,
-          "rOuter": 30,
-          "rInner": 20,
-          "start": 0,
-          "end": 180,
-          "color": "0xF81F",
-          "bgColor": "0x0000"
+          "backgroundColor": "0x0000",
+          "elements": [
+            {
+              "type": "text",
+              "x": 160,
+              "y": 85,
+              "size": 3,
+              "datum": 4,
+              "color": "0x0000",
+              "bgColor": "0xFFE0",
+              "content": "Weather"
+            }
+          ]
         }
       ]
     }
