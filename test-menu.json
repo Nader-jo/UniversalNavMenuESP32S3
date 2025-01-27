@@ -275,11 +275,13 @@
       "backgroundColor": "0x0000",
       "elements": [
         {
-          "type": "fillRect",
+          "type": "fillSmoothRoundRect",
           "x": 110,
           "y": 25,
           "w": 100,
           "h": 110,
+          "r": 5,
+          "bgColor": "0x0000",
           "color": "0x07FF"
         },
         {
