@@ -199,6 +199,16 @@
       "backgroundColor": "0x0000",
       "elements": [
         {
+          "type": "fillSmoothRoundRect",
+          "x": 150,
+          "y": 10,
+          "w": 20,
+          "h": 15,
+          "r": 3,
+          "color": "0xb596",
+          "bgColor": "0x0000"
+        },
+        {
           "type": "fillSmoothCircle",
           "x": 160,
           "y": 75,
@@ -233,19 +243,11 @@
         {
           "type": "fillTriangle",
           "x0": 160,
-          "y0": 40,
-          "x1": 157,
-          "y1": 70,
-          "x2": 163,
-          "y2": 70,
-          "color": "0x0000"
-        },
-        {
-          "type": "fillRect",
-          "x": 167,
-          "y": 72,
-          "w": 20,
-          "h": 6,
+          "y0": 45,
+          "x1": 155,
+          "y1": 68,
+          "x2": 165,
+          "y2": 68,
           "color": "0x0000"
         },
         {
