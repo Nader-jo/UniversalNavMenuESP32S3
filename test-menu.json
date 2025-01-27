@@ -199,6 +199,14 @@
       "backgroundColor": "0x0000",
       "elements": [
         {
+          "type": "fillRect",
+          "x": 152,
+          "y": 10,
+          "w": 16,
+          "h": 20,
+          "color": "0x8410"
+        },
+        {
           "type": "fillSmoothRoundRect",
           "x": 145,
           "y": 10,
@@ -220,7 +228,7 @@
           "type": "fillSmoothCircle",
           "x": 160,
           "y": 75,
-          "r": 40,
+          "r": 35,
           "color": "0xFFFF",
           "bgColor": "0x07FF"
         },
