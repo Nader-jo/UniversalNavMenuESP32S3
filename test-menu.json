@@ -402,7 +402,7 @@
           "type": "fillSmoothCircle",
           "x": 120,
           "y": 60,
-          "r": 35,
+          "r": 40,
           "color": "0xfbe0",
           "bgColor": "0x0000"
         },
@@ -410,14 +410,14 @@
           "type": "fillSmoothCircle",
           "x": 120,
           "y": 60,
-          "r": 40,
+          "r": 35,
           "color": "0xffe0",
           "bgColor": "0xfbe0"
         },
         {
           "type": "fillSmoothCircle",
           "x": 110,
-          "y": 80,
+          "y": 90,
           "r": 30,
           "color": "0xaebf",
           "bgColor": "0x0000"
@@ -425,7 +425,7 @@
         {
           "type": "fillSmoothCircle",
           "x": 190,
-          "y": 80,
+          "y": 90,
           "r": 30,
           "color": "0xaebf",
           "bgColor": "0x0000"
@@ -433,7 +433,7 @@
         {
           "type": "fillSmoothCircle",
           "x": 170,
-          "y": 80,
+          "y": 70,
           "r": 35,
           "color": "0xaebf",
           "bgColor": "0x0000"
@@ -449,7 +449,7 @@
         {
           "type": "fillRect",
           "x": 110,
-          "y": 80,
+          "y": 60,
           "w": 80,
           "h": 62,
           "color": "0xaebf"
