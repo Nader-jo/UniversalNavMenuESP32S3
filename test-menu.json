@@ -352,24 +352,24 @@
           "type": "fillSmoothCircle",
           "x": 160,
           "y": 75,
-          "r": 60,
+          "r": 50,
           "color": "0x2bbf",
           "bgColor": "0x0000"
         },
         {
           "type": "fillSmoothRoundRect",
-          "x": 120,
-          "y": 45,
-          "w": 80,
-          "h": 60,
+          "x": 130,
+          "y": 40,
+          "w": 60,
+          "h": 40,
           "r": 5,
           "color": "0xc658",
           "bgColor": "0x2bbf"
         },
         {
           "type": "drawLine",
-          "x0": 120,
-          "y0": 50,
+          "x0": 130,
+          "y0": 40,
           "x1": 160,
           "y1": 75,
           "color": "0x6b6d"
@@ -378,8 +378,8 @@
           "type": "drawLine",
           "x0": 160,
           "y0": 75,
-          "x1": 200,
-          "y1": 50,
+          "x1": 190,
+          "y1": 40,
           "color": "0x6b6d"
         },
         {
