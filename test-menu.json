@@ -416,6 +416,14 @@
         },
         {
           "type": "fillSmoothCircle",
+          "x": 170,
+          "y": 70,
+          "r": 35,
+          "color": "0xaebf",
+          "bgColor": "0x0000"
+        },
+        {
+          "type": "fillSmoothCircle",
           "x": 110,
           "y": 90,
           "r": 30,
@@ -432,14 +440,6 @@
         },
         {
           "type": "fillSmoothCircle",
-          "x": 170,
-          "y": 70,
-          "r": 35,
-          "color": "0xaebf",
-          "bgColor": "0x0000"
-        },
-        {
-          "type": "fillSmoothCircle",
           "x": 125,
           "y": 75,
           "r": 25,
@@ -451,7 +451,7 @@
           "x": 110,
           "y": 60,
           "w": 80,
-          "h": 62,
+          "h": 61,
           "color": "0xaebf"
         },
         {
