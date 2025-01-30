@@ -223,6 +223,86 @@
               "color": "0xffff",
               "bgColor": "0x0000",
               "content": "Crypto"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 10,
+              "y": 10,
+              "w": 70,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 10,
+              "y": 50,
+              "w": 70,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 10,
+              "y": 90,
+              "w": 70,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 10,
+              "y": 130,
+              "w": 70,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 90,
+              "y": 10,
+              "w": 70,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 170,
+              "y": 10,
+              "w": 70,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 250,
+              "y": 10,
+              "w": 70,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 90,
+              "y": 50,
+              "w": 220,
+              "h": 110,
+              "r": 5,
+              "color": "0x4228",
+              "bgColor": "0x0000"
             }
           ]
         }
@@ -350,7 +430,7 @@
             {
               "type": "fillSmoothRoundRect",
               "x": 10,
-              "y": 130,
+              "y": 150,
               "w": 70,
               "h": 30,
               "r": 5,
@@ -360,7 +440,7 @@
             {
               "type": "fillSmoothRoundRect",
               "x": 240,
-              "y": 130,
+              "y": 150,
               "w": 70,
               "h": 30,
               "r": 5,
@@ -449,16 +529,6 @@
           "backgroundColor": "0x0000",
           "elements": [
             {
-              "type": "text",
-              "x": 160,
-              "y": 85,
-              "size": 3,
-              "datum": 4,
-              "color": "0xffff",
-              "bgColor": "0x0000",
-              "content": "Tasks"
-            },
-            {
               "type": "fillSmoothRoundRect",
               "x": 10,
               "y": 10,
@@ -470,7 +540,7 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 295,
+              "x": 305,
               "y": 15,
               "w": 20,
               "h": 20,
@@ -490,7 +560,7 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 295,
+              "x": 305,
               "y": 55,
               "w": 20,
               "h": 20,
@@ -510,7 +580,7 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 295,
+              "x": 305,
               "y": 95,
               "w": 20,
               "h": 20,
@@ -530,7 +600,7 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 295,
+              "x": 305,
               "y": 135,
               "w": 20,
               "h": 20,
