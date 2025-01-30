@@ -529,7 +529,7 @@
           "y": 75,
           "r": 25,
           "color": "0xaebf",
-          "bgColor": "0x0000"
+          "bgColor": "0xffe0"
         },
         {
           "type": "fillRect",
