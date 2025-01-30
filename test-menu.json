@@ -62,7 +62,7 @@
           "datum": 4,
           "color": "0x0000",
           "bgColor": "0xFFE0",
-          "content": "0"
+          "content": "..."
         }
       ],
       "subMenu": [
@@ -77,7 +77,7 @@
               "datum": 4,
               "color": "0xffff",
               "bgColor": "0x0000",
-              "content": "0-0"
+              "content": "Clock"
             }
           ]
         }
@@ -235,7 +235,7 @@
         {
           "type": "fillRect",
           "x": 152,
-          "y": 10,
+          "y": 15,
           "w": 16,
           "h": 20,
           "color": "0x8410"
@@ -243,7 +243,7 @@
         {
           "type": "fillSmoothRoundRect",
           "x": 145,
-          "y": 10,
+          "y": 15,
           "w": 30,
           "h": 15,
           "r": 3,
@@ -253,7 +253,7 @@
         {
           "type": "fillSmoothCircle",
           "x": 160,
-          "y": 75,
+          "y": 80,
           "r": 45,
           "color": "0x07FF",
           "bgColor": "0x0000"
@@ -261,7 +261,7 @@
         {
           "type": "fillSmoothCircle",
           "x": 160,
-          "y": 75,
+          "y": 80,
           "r": 35,
           "color": "0xFFFF",
           "bgColor": "0x07FF"
@@ -269,7 +269,7 @@
         {
           "type": "fillSmoothCircle",
           "x": 160,
-          "y": 75,
+          "y": 80,
           "r": 10,
           "color": "0x0000",
           "bgColor": "0xFFFF"
@@ -277,7 +277,7 @@
         {
           "type": "fillSmoothCircle",
           "x": 160,
-          "y": 75,
+          "y": 80,
           "r": 5,
           "color": "0x07FF",
           "bgColor": "0x0000"
@@ -285,17 +285,17 @@
         {
           "type": "fillTriangle",
           "x0": 160,
-          "y0": 45,
+          "y0": 50,
           "x1": 155,
-          "y1": 68,
+          "y1": 73,
           "x2": 165,
-          "y2": 68,
+          "y2": 73,
           "color": "0x0000"
         },
         {
           "type": "text",
           "x": 160,
-          "y": 155,
+          "y": 160,
           "size": 2,
           "datum": 4,
           "color": "0xFFFF",
