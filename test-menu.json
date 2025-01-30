@@ -75,8 +75,8 @@
               "y": 85,
               "size": 3,
               "datum": 4,
-              "color": "0x0000",
-              "bgColor": "0xFFE0",
+              "color": "0xffff",
+              "bgColor": "0x0000",
               "content": "0-0"
             }
           ]
@@ -220,8 +220,8 @@
               "y": 85,
               "size": 3,
               "datum": 4,
-              "color": "0x0000",
-              "bgColor": "0xFFE0",
+              "color": "0xffff",
+              "bgColor": "0x0000",
               "content": "Crypto"
             }
           ]
@@ -313,8 +313,8 @@
               "y": 85,
               "size": 3,
               "datum": 4,
-              "color": "0x0000",
-              "bgColor": "0xFFE0",
+              "color": "0xffff",
+              "bgColor": "0x0000",
               "content": "Timer"
             }
           ]
@@ -328,7 +328,7 @@
         {
           "type": "fillSmoothRoundRect",
           "x": 110,
-          "y": 25,
+          "y": 15,
           "w": 100,
           "h": 110,
           "r": 5,
@@ -338,7 +338,7 @@
         {
           "type": "fillRect",
           "x": 120,
-          "y": 35,
+          "y": 25,
           "w": 80,
           "h": 10,
           "color": "0x0554"
@@ -346,7 +346,7 @@
         {
           "type": "fillRect",
           "x": 120,
-          "y": 55,
+          "y": 45,
           "w": 80,
           "h": 10,
           "color": "0x0554"
@@ -354,7 +354,7 @@
         {
           "type": "fillRect",
           "x": 120,
-          "y": 75,
+          "y": 65,
           "w": 80,
           "h": 10,
           "color": "0x0554"
@@ -362,7 +362,7 @@
         {
           "type": "fillRect",
           "x": 120,
-          "y": 95,
+          "y": 85,
           "w": 80,
           "h": 10,
           "color": "0x0554"
@@ -370,7 +370,7 @@
         {
           "type": "fillRect",
           "x": 120,
-          "y": 115,
+          "y": 105,
           "w": 80,
           "h": 10,
           "color": "0x0554"
@@ -378,7 +378,7 @@
         {
           "type": "fillRect",
           "x": 130,
-          "y": 25,
+          "y": 15,
           "w": 5,
           "h": 110,
           "color": "0x07FF"
@@ -404,8 +404,8 @@
               "y": 85,
               "size": 3,
               "datum": 4,
-              "color": "0x0000",
-              "bgColor": "0xFFE0",
+              "color": "0xffff",
+              "bgColor": "0x0000",
               "content": "Tasks"
             }
           ]
@@ -471,8 +471,8 @@
               "y": 85,
               "size": 3,
               "datum": 4,
-              "color": "0x0000",
-              "bgColor": "0xFFE0",
+              "color": "0xffff",
+              "bgColor": "0x0000",
               "content": "Messages"
             }
           ]
@@ -560,8 +560,8 @@
               "y": 85,
               "size": 3,
               "datum": 4,
-              "color": "0x0000",
-              "bgColor": "0xFFE0",
+              "color": "0xffff",
+              "bgColor": "0x0000",
               "content": "Weather"
             }
           ]

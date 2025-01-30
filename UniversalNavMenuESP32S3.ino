@@ -3,6 +3,7 @@
 #include <ArduinoJson.h>
 #include <HTTPClient.h>
 #include "credentials.h"
+#include "midleFont.h"
 
 static const int screenW = 320;
 static const int screenH = 170;
@@ -51,7 +52,7 @@ void setup() {
   spriteCurrent.deleteSprite();
   spriteCurrent.createSprite(screenW, screenH);
   drawWifiScreen(spriteCurrent);
-  spriteCurrent.setTextSize(2);
+  spriteCurrent.loadFont(midleFont);
   spriteCurrent.setTextDatum(4);
   spriteCurrent.drawString("Connecting", screenW / 2, 155);
   spriteCurrent.pushSprite(0, 0);
@@ -215,7 +216,7 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc) {
         const char *content = elem["content"] | "";
         uint16_t txtColor = parseColor(txtColorStr);
         uint16_t txtBg = parseColor(txtBgStr);
-        spr.setTextSize(size);
+        spr.loadFont(midleFont);
         spr.setTextDatum(datum);
         spr.setTextColor(txtColor, txtBg);
         spr.drawString(content, x, y);
