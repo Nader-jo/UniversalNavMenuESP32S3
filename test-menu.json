@@ -215,16 +215,6 @@
           "backgroundColor": "0x0000",
           "elements": [
             {
-              "type": "text",
-              "x": 160,
-              "y": 85,
-              "size": 3,
-              "datum": 4,
-              "color": "0xffff",
-              "bgColor": "0x0000",
-              "content": "Crypto"
-            },
-            {
               "type": "fillSmoothRoundRect",
               "x": 10,
               "y": 10,
@@ -239,29 +229,9 @@
               "x": 10,
               "y": 50,
               "w": 70,
-              "h": 30,
+              "h": 110,
               "r": 5,
-              "color": "0x7430",
-              "bgColor": "0x0000"
-            },
-            {
-              "type": "fillSmoothRoundRect",
-              "x": 10,
-              "y": 90,
-              "w": 70,
-              "h": 30,
-              "r": 5,
-              "color": "0x7430",
-              "bgColor": "0x0000"
-            },
-            {
-              "type": "fillSmoothRoundRect",
-              "x": 10,
-              "y": 130,
-              "w": 70,
-              "h": 30,
-              "r": 5,
-              "color": "0x7430",
+              "color": "0x960b",
               "bgColor": "0x0000"
             },
             {
@@ -306,15 +276,15 @@
             },
             {
               "type": "drawLine",
-              "x0": 115,
+              "x0": 120,
               "y0": 55,
-              "x1": 115,
+              "x1": 120,
               "y1": 155,
               "color": "0x0000"
             },
             {
               "type": "drawLine",
-              "x0": 115,
+              "x0": 120,
               "y0": 155,
               "x1": 285,
               "y1": 155,
@@ -859,16 +829,6 @@
               "r": 5,
               "color": "0x7430",
               "bgColor": "0x0000"
-            },
-            {
-              "type": "text",
-              "x": 160,
-              "y": 85,
-              "size": 3,
-              "datum": 4,
-              "color": "0xffff",
-              "bgColor": "0x0000",
-              "content": "Weather"
             }
           ]
         }
