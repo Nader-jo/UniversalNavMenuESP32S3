@@ -467,9 +467,9 @@
           "elements": [
             {
               "type": "fillSmoothRoundRect",
-              "x": 60,
+              "x": 62,
               "y": 10,
-              "w": 250,
+              "w": 248,
               "h": 150,
               "r": 5,
               "color": "0x8b14",
@@ -502,19 +502,18 @@
               "w": 46,
               "h": 46,
               "r": 5,
-              "color": "0x8b14",
+              "color": "0xad75",
               "bgColor": "0x0000"
             },
             {
-              "type": "drawSmoothArc",
-              "x": 33,
-              "y": 137,
-              "rOuter": 14,
-              "rInner": 20,
-              "start": 0,
-              "end": 270,
-              "color": "0x0000",
-              "bgColor": "0x8b14"
+              "type": "fillTriangle",
+              "x0": 41,
+              "y0": 110,
+              "x1": 25,
+              "y1": 137,
+              "x2": 41,
+              "y2": 156,
+              "color": "0x0000"
             }
           ]
         }
