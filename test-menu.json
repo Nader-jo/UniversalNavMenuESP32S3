@@ -231,7 +231,7 @@
               "w": 70,
               "h": 110,
               "r": 5,
-              "color": "0x960b",
+              "color": "0x31a6",
               "bgColor": "0x0000"
             },
             {
@@ -653,9 +653,9 @@
           "elements": [
             {
               "type": "fillSmoothRoundRect",
-              "x": 62,
+              "x": 66,
               "y": 10,
-              "w": 248,
+              "w": 244,
               "h": 150,
               "r": 5,
               "color": "0x8b14",
