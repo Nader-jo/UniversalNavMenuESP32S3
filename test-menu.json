@@ -60,8 +60,8 @@
           "y": 150,
           "size": 2,
           "datum": 4,
-          "color": "0x0000",
-          "bgColor": "0xFFE0",
+          "color": "0xffff",
+          "bgColor": "0x0000",
           "content": "Clock"
         }
       ],
