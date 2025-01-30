@@ -329,7 +329,7 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 155,
+              "x": 165,
               "y": 10,
               "w": 67,
               "h": 30,
@@ -339,7 +339,7 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 232,
+              "x": 242,
               "y": 10,
               "w": 68,
               "h": 30,
@@ -457,6 +457,86 @@
               "color": "0xffff",
               "bgColor": "0x0000",
               "content": "Tasks"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 10,
+              "y": 10,
+              "w": 300,
+              "h": 30,
+              "r": 5,
+              "color": "0xc658",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 295,
+              "y": 15,
+              "w": 20,
+              "h": 20,
+              "r": 5,
+              "color": "0x0000",
+              "bgColor": "0xc658"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 10,
+              "y": 50,
+              "w": 300,
+              "h": 30,
+              "r": 5,
+              "color": "0xc658",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 295,
+              "y": 55,
+              "w": 20,
+              "h": 20,
+              "r": 5,
+              "color": "0x0000",
+              "bgColor": "0xc658"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 10,
+              "y": 90,
+              "w": 300,
+              "h": 30,
+              "r": 5,
+              "color": "0xc658",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 295,
+              "y": 95,
+              "w": 20,
+              "h": 20,
+              "r": 5,
+              "color": "0x0000",
+              "bgColor": "0xc658"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 10,
+              "y": 130,
+              "w": 300,
+              "h": 30,
+              "r": 5,
+              "color": "0xc658",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 295,
+              "y": 135,
+              "w": 20,
+              "h": 20,
+              "r": 5,
+              "color": "0x0000",
+              "bgColor": "0xc658"
             }
           ]
         }
@@ -679,7 +759,7 @@
               "x": 230,
               "y": 10,
               "w": 80,
-              "h": 80,
+              "h": 120,
               "r": 5,
               "color": "0x7430",
               "bgColor": "0x0000"
