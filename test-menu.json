@@ -416,8 +416,8 @@
             {
               "type": "fillSmoothRoundRect",
               "x": 10,
-              "y": 150,
-              "w": 70,
+              "y": 130,
+              "w": 80,
               "h": 30,
               "r": 5,
               "color": "0x7430",
@@ -426,8 +426,8 @@
             {
               "type": "fillSmoothRoundRect",
               "x": 240,
-              "y": 150,
-              "w": 70,
+              "y": 130,
+              "w": 80,
               "h": 30,
               "r": 5,
               "color": "0x7430",
