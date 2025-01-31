@@ -26,8 +26,8 @@ uint8_t currentScreenId = 0;
 uint8_t nextScreenId = 0;
 bool inSubMenu = false;
 uint8_t subMenuIndex = 0;
-uint8_t timeZone = 0;
-char *city = "";
+int timeZone = 0;
+const char *city = "";
 
 TFT_eSPI tft = TFT_eSPI();
 TFT_eSprite spriteCurrent = TFT_eSprite(&tft);
@@ -37,7 +37,7 @@ StaticJsonDocument<2048> menuItems;
 
 const char *server = "https://raw.githubusercontent.com/Nader-jo/UniversalNavMenuESP32S3/refs/heads/develop/test-menu.json";
 const char *ntpServer = "pool.ntp.org";
-const char *locationServer = "https://ipapi.co/json";
+const char *locationServer = "http://ip-api.com/json?fields=status,city,offset,query";
 
 void getData();
 void buildScreen(TFT_eSprite &spr, uint8_t screenId);
@@ -83,8 +83,8 @@ void setup()
 
   StaticJsonDocument<1024> locData;
   deserializeJson(locData, getData(locationServer));
-  timeZone = int(locData["utc_offset"]) / 100 | 0;
-  strcpy(city, locData["city"]);
+  timeZone = locData["offset"] | 0;
+  city = locData["city"];
   setTime();
   deserializeJson(menuItems, getData(server));
   screenCount = menuItems["menu"].size();
@@ -144,7 +144,7 @@ void loop()
 
 void setTime()
 {
-  configTime(3600 * timeZone, 0, ntpServer);
+  configTime(timeZone, 0, ntpServer);
   struct tm timeinfo;
   if (getLocalTime(&timeinfo))
   {
@@ -156,6 +156,7 @@ String getData(String url)
 {
   HTTPClient http;
   String payload = "";
+  Serial.println(url);
   http.begin(url);
   int httpResponseCode = http.GET();
   if (httpResponseCode > 0)
@@ -168,6 +169,7 @@ String getData(String url)
     Serial.println(httpResponseCode);
   }
   http.end();
+  Serial.println(payload);
   return payload;
 }
 
@@ -284,31 +286,32 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc)
         const char *url = elem["url"] | "";
         const char *jsonPath = elem["jsonPath"] | "";
         const char *format = elem["format"] | "$v";
-        const char[] *substringS = elem["substringS"] | "0";
-        const char[] *substringE = elem["substringE"] | "0";
+        unsigned int substringS = elem["substringS"] | 0;
+        unsigned int substringE = elem["substringE"] | 0;
         int x = elem["x"] | 0;
         int y = elem["y"] | 0;
         int size = elem["size"] | 1;
         int datum = elem["datum"] | 0;
-
-        if ("getTime" != url)
+        uint16_t txtColor = parseColor(elem["color"] | "0xFFFF");
+        uint16_t bgColor = parseColor(elem["bgColor"] | "0x0000");
+        String finalText = "";
+        if (String(url) != "getTime")
         {
-          uint16_t txtColor = parseColor(elem["color"] | "0xFFFF");
-          uint16_t bgColor = parseColor(elem["bgColor"] | "0x0000");
           StaticJsonDocument<1024> fetchedData;
           deserializeJson(fetchedData, getData(url));
 
           String dynamicValue = getValueByPath(fetchedData, jsonPath);
 
           // If format="Temp: $v C" and dynamicValue="23.4", result="Temp: 23.4 C"
-          String finalText = format.replace("$v", dynamicValue);
+          finalText = format;
+          finalText.replace("$v", dynamicValue);
         }
         else
         {
-          String finalText = rtc.getTime();
+          finalText = rtc.getTime();
         }
 
-        if (substringE != "0" || substringS != "0")
+        if (substringE != 0 || substringS != 0)
         {
           finalText = finalText.substring(substringS, substringE);
         }
@@ -478,7 +481,7 @@ String getValueByPath(JsonDocument &doc, const char *path)
   // Now currentVar should be the final element
   // Convert to string. If it's not a string, we'll try to convert anyway.
   String result;
-  if (currentVar.is<char *>())
+  if (currentVar.is<const char *>())
   {
     // It's already a string
     result = currentVar.as<const char *>();
