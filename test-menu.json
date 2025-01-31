@@ -70,14 +70,16 @@
           "backgroundColor": "0x0000",
           "elements": [
             {
-              "type": "text",
+              "type": "textDynamic",
               "x": 160,
               "y": 85,
               "size": 3,
               "datum": 4,
               "color": "0xffff",
               "bgColor": "0x0000",
-              "content": "Clock"
+              "url": "getTime",
+              "substringS": 0,
+              "substringE": 5
             }
           ]
         }
