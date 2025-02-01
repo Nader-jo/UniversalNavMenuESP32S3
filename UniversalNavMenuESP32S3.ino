@@ -421,6 +421,43 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc)
         uint16_t bgColor = parseColor(bgStr);
         spr.drawSmoothArc(x, y, rOuter, rInner, start, end, fgColor, bgColor);
       }
+      else if (strcmp(type, "graphDynamic") == 0)
+      {
+        // Parse the element JSON
+        int gx = elem["x"] | 0;
+        int gy = elem["y"] | 0;
+        int gw = elem["w"] | 200;
+        int gh = elem["h"] | 100;
+
+        // data source
+        const char *url = elem["url"] | "";
+        const char *jsonPath = elem["jsonPath"] | "";
+
+        // 1) Fetch the JSON
+        StaticJsonDocument<1024> fetchedData;
+        deserializeJson(fetchedData, getData(url));
+
+        // 2) We expect "changes" (or whatever 'jsonPath') to be an array of strings
+        // Convert them to floats
+        JsonArray arr = fetchedData.as<JsonObject>()[jsonPath].as<JsonArray>();
+        if (!arr.isNull())
+        {
+          // Copy them into a temporary float array
+          size_t arrSize = arr.size();
+          float *dataArray = (float *)malloc(arrSize * sizeof(float));
+          if (dataArray)
+          {
+            for (size_t i = 0; i < arrSize; i++)
+            {
+              dataArray[i] = arr[i].as<float>();
+            }
+            // 3) Draw the line graph
+            drawLineGraph(spr, gx, gy, gw, gh,
+                          dataArray, arrSize);
+            free(dataArray);
+          }
+        }
+      }
     }
   }
 }
@@ -509,4 +546,80 @@ String getValueByPath(JsonDocument &doc, const char *path)
 
   free(tempPath);
   return result;
+}
+
+/**
+ * Draw a simple line graph in a TFT_eSprite using TFT_eSPI.
+ *
+ * Parameters:
+ *  - spr         : The TFT_eSprite to draw on
+ *  - x, y        : Top-left corner of the graph in the sprite
+ *  - w, h        : Width and height of the graph area
+ *  - data        : Pointer to an array of float values
+ *
+ * This function maps each data[i] to a Y coordinate within [0..h].
+ *  Y = y + h - map(data[i] in [minVal..maxVal] -> [0..h])
+ * Then draws lines between consecutive points.
+ *
+ * Example usage:
+ *    float myData[5] = {10, 20, 25, 15, 30};
+ *    drawLineGraph(spriteCurrent, 10, 10, 200, 100,
+ *                  myData, 5, 0, 40, TFT_GREEN, TFT_BLACK,
+ *                  true, TFT_WHITE);
+ */
+void drawLineGraph(TFT_eSprite &spr, int x, int y, int w, int h, const float *data, size_t dataCount)
+{
+  // nimVal and maxVal are calculated from data array
+  float minVal = data[0];
+  float maxVal = data[0];
+  for (size_t i = 1; i < dataCount; i++)
+  {
+    if (data[i] < minVal)
+      minVal = data[i];
+    if (data[i] > maxVal)
+      maxVal = data[i];
+  }
+
+  // If there aren't at least 2 data points, nothing to draw
+  if (dataCount < 2)
+    return;
+
+  // 4. Map each data point to screen coords and draw lines
+  for (size_t i = 0; i < dataCount - 1; i++)
+  {
+    // Current point
+    float val1 = data[i];
+    // Next point
+    float val2 = data[i + 1];
+
+    // Map val1 from [minVal..maxVal] to [0..h]
+    int mappedY1 = (int)((val1 - minVal) * (h) / (maxVal - minVal));
+    // Clip to [0..h] just in case
+    if (mappedY1 < 0)
+      mappedY1 = 0;
+    if (mappedY1 > h)
+      mappedY1 = h;
+
+    // Map val2 similarly
+    int mappedY2 = (int)((val2 - minVal) * (h) / (maxVal - minVal));
+    if (mappedY2 < 0)
+      mappedY2 = 0;
+    if (mappedY2 > h)
+      mappedY2 = h;
+
+    // Convert to sprite coordinates (0 at top => 0 in sprite),
+    // but we want 0 at bottom => add y offset, invert vertical
+    int x1 = x + (int)((float)i * (float)w / (dataCount - 1));
+    int y1 = y + (h - mappedY1);
+    int x2 = x + (int)((float)(i + 1) * (float)w / (dataCount - 1));
+    int y2 = y + (h - mappedY2);
+
+    uint16_t lineColor = TFT_WHITE;
+    if (y2 > y1)
+      lineColor = TFT_GREEN;
+    else
+      lineColor = TFT_RED;
+    // Draw the line
+    spr.drawLine(x1, y1, x2, y2, lineColor);
+  }
 }

@@ -81,7 +81,8 @@
               "substringS": 0,
               "substringE": 8
             }
-          ]
+          ],
+          "refresh": true
         }
       ]
     },
@@ -227,6 +228,16 @@
               "bgColor": "0x0000"
             },
             {
+              "type": "text",
+              "x": 45,
+              "y": 25,
+              "size": 1,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "BTC"
+            },
+            {
               "type": "fillSmoothRoundRect",
               "x": 10,
               "y": 50,
@@ -247,6 +258,16 @@
               "bgColor": "0x0000"
             },
             {
+              "type": "text",
+              "x": 125,
+              "y": 25,
+              "size": 1,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "ETH"
+            },
+            {
               "type": "fillSmoothRoundRect",
               "x": 170,
               "y": 10,
@@ -255,6 +276,16 @@
               "r": 5,
               "color": "0x7430",
               "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 205,
+              "y": 25,
+              "size": 1,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "SOL"
             },
             {
               "type": "fillSmoothRoundRect",
@@ -291,6 +322,15 @@
               "x1": 285,
               "y1": 155,
               "color": "0x0000"
+            },
+            {
+              "type": "graphDynamic",
+              "x": 120,
+              "y": 55,
+              "w": 165,
+              "h": 100,
+              "url": "https://api.gemini.com/v2/ticker/btcusd",
+              "jsonPath": "changes"
             }
           ]
         }
