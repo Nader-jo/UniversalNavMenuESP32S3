@@ -80,6 +80,18 @@
               "url": "getTime",
               "substringS": 0,
               "substringE": 8
+            },
+            {
+              "type": "textDynamic",
+              "x": 10,
+              "y": 10,
+              "size": 2,
+              "datum": 4,
+              "color": "0xffff",
+              "bgColor": "0x0000",
+              "url": "getTime",
+              "substringS": 9,
+              "substringE": 17
             }
           ],
           "refresh": true
