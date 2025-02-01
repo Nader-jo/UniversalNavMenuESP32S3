@@ -419,7 +419,7 @@
           "backgroundColor": "0x0000",
           "elements": [
             {
-              "Type": "textDynamic",
+              "type": "textDynamic",
               "x": 160,
               "y": 85,
               "size": 3,
@@ -441,7 +441,7 @@
               "bgColor": "0x0000"
             },
             {
-              "Type": "text",
+              "type": "text",
               "x": 43,
               "y": 25,
               "size": 2,
