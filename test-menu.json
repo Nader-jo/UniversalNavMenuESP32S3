@@ -332,7 +332,8 @@
               "url": "https://api.gemini.com/v2/ticker/btcusd",
               "jsonPath": "changes"
             }
-          ]
+          ],
+          "refresh": false
         }
       ]
     },
@@ -475,7 +476,8 @@
               "color": "0x7430",
               "bgColor": "0x0000"
             }
-          ]
+          ],
+          "refresh": false
         }
       ]
     },
@@ -636,7 +638,8 @@
               "color": "0x0000",
               "bgColor": "0xc658"
             }
-          ]
+          ],
+          "refresh": false
         }
       ]
     },
@@ -743,7 +746,8 @@
               "y2": 154,
               "color": "0x0000"
             }
-          ]
+          ],
+          "refresh": false
         }
       ]
     },
@@ -872,7 +876,8 @@
               "color": "0x7430",
               "bgColor": "0x0000"
             }
-          ]
+          ],
+          "refresh": false
         }
       ]
     }

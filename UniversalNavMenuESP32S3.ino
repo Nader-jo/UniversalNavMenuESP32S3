@@ -140,7 +140,7 @@ void loop()
       inSubMenu = false;
     }
   }
-  if (inSubMenu)
+  if (inSubMenu && (menuItems["menu"][currentScreenId]["subMenu"][subMenuIndex]["refresh"] == "true"))
   {
     spriteCurrent.deleteSprite();
     spriteCurrent.createSprite(screenW, screenH);
