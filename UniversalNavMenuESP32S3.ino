@@ -552,7 +552,7 @@ String getValueByPath(JsonDocument &doc, const char *path)
   return result;
 }
 
-void drawLineGraph(TFT_eSprite &spr, int x, int y, int w, int h, const float *data, size_t dataCount)
+void drawLineGraph(TFT_eSprite &spr, int x, int y, int w, int h, float *data, size_t dataCount)
 {
   // 1. Quick check: need at least 2 data points
   if (dataCount < 2)
@@ -585,6 +585,13 @@ void drawLineGraph(TFT_eSprite &spr, int x, int y, int w, int h, const float *da
   spr.drawFastHLine(x - 2, y + h, 5, TFT_BLACK);
 
   uint16_t gridColor = TFT_LIGHTGREY;
+  // invert data array
+  for (size_t i = 0; i < dataCount / 2; i++)
+  {
+    float temp = data[i];
+    data[i] = data[dataCount - i - 1];
+    data[dataCount - i - 1] = temp;
+  }
 
   // 5. Map each data point to screen coords and draw lines
   //    We'll color each segment green if slope is negative, red if slope is positive.
