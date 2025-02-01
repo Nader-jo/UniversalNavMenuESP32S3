@@ -616,9 +616,9 @@ void drawLineGraph(TFT_eSprite &spr, int x, int y, int w, int h, const float *da
 
     uint16_t lineColor = TFT_WHITE;
     if (y2 > y1)
-      lineColor = TFT_GREEN;
-    else
       lineColor = TFT_RED;
+    else
+      lineColor = TFT_GREEN;
     // Draw the line
     spr.drawLine(x1, y1, x2, y2, lineColor);
   }
