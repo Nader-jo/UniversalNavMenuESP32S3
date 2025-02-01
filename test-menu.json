@@ -89,9 +89,9 @@
               "datum": 4,
               "color": "0xffff",
               "bgColor": "0x0000",
-              "url": "getTime",
-              "substringS": 9,
-              "substringE": 17
+              "url": "getDate",
+              "substringS": 0,
+              "substringE": 0
             }
           ],
           "refresh": true
@@ -312,7 +312,7 @@
             {
               "type": "drawLine",
               "x0": 70,
-              "y0": 50,
+              "y0": 52,
               "x1": 70,
               "y1": 145,
               "color": "0x0000"
