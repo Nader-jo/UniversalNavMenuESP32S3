@@ -140,6 +140,13 @@ void loop()
       inSubMenu = false;
     }
   }
+  if (inSubMenu)
+  {
+    spriteCurrent.deleteSprite();
+    spriteCurrent.createSprite(screenW, screenH);
+    buildSubScreen(spriteCurrent, currentScreenId, subMenuIndex);
+    spriteCurrent.pushSprite(0, 0);
+  }
 }
 
 void setTime()
@@ -316,10 +323,18 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc)
           finalText = finalText.substring(substringS, substringE);
         }
 
-        spr.setTextSize(size);
+        if (size == 1)
+          spr.loadFont(tinyFont);
+        else if (size == 2)
+          spr.loadFont(midleFont);
+        else if (size == 3)
+          spr.loadFont(bigFont);
+        else
+          spr.loadFont(midleFont);
         spr.setTextDatum(datum);
         spr.setTextColor(txtColor, bgColor);
         spr.drawString(finalText, x, y);
+        spr.unloadFont();
       }
       else if (strcmp(type, "fillTriangle") == 0)
       {

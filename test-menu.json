@@ -79,7 +79,7 @@
               "bgColor": "0x0000",
               "url": "getTime",
               "substringS": 0,
-              "substringE": 5
+              "substringE": 8
             }
           ]
         }
