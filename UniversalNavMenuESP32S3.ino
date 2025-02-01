@@ -302,7 +302,15 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc)
         uint16_t txtColor = parseColor(elem["color"] | "0xFFFF");
         uint16_t bgColor = parseColor(elem["bgColor"] | "0x0000");
         String finalText = "";
-        if (String(url) != "getTime")
+        if (String(url) == "getTime")
+        {
+          finalText = rtc.getTime();
+        }
+        else if (String(url) == "getDate")
+        {
+          finalText = rtc.getDate();
+        }
+        else
         {
           StaticJsonDocument<1024> fetchedData;
           deserializeJson(fetchedData, getData(url));
@@ -312,10 +320,6 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc)
           // If format="Temp: $v C" and dynamicValue="23.4", result="Temp: 23.4 C"
           finalText = format;
           finalText.replace("$v", dynamicValue);
-        }
-        else
-        {
-          finalText = rtc.getTime();
         }
 
         if (substringE != 0 || substringS != 0)
