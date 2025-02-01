@@ -83,7 +83,7 @@
             },
             {
               "type": "textDynamic",
-              "x": 10,
+              "x": 100,
               "y": 10,
               "size": 2,
               "datum": 4,
