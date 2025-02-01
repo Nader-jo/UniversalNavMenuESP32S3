@@ -251,16 +251,6 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 10,
-              "y": 50,
-              "w": 70,
-              "h": 110,
-              "r": 5,
-              "color": "0x31a6",
-              "bgColor": "0x0000"
-            },
-            {
-              "type": "fillSmoothRoundRect",
               "x": 90,
               "y": 10,
               "w": 70,
@@ -311,9 +301,9 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 90,
+              "x": 10,
               "y": 50,
-              "w": 220,
+              "w": 300,
               "h": 110,
               "r": 5,
               "color": "0x31a6",
@@ -321,26 +311,26 @@
             },
             {
               "type": "drawLine",
-              "x0": 120,
+              "x0": 90,
               "y0": 55,
-              "x1": 120,
-              "y1": 155,
+              "x1": 90,
+              "y1": 145,
               "color": "0x0000"
             },
             {
               "type": "drawLine",
-              "x0": 120,
-              "y0": 155,
+              "x0": 90,
+              "y0": 145,
               "x1": 285,
-              "y1": 155,
+              "y1": 145,
               "color": "0x0000"
             },
             {
               "type": "graphDynamic",
-              "x": 120,
+              "x": 90,
               "y": 55,
-              "w": 165,
-              "h": 100,
+              "w": 220,
+              "h": 90,
               "url": "https://api.gemini.com/v2/ticker/btcusd",
               "jsonPath": "changes"
             }

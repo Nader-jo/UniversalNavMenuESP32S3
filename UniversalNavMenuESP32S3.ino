@@ -140,7 +140,7 @@ void loop()
       inSubMenu = false;
     }
   }
-  if (inSubMenu && (menuItems["menu"][currentScreenId]["subMenu"][subMenuIndex]["refresh"] == "true"))
+  if (inSubMenu && (menuItems["menu"][currentScreenId]["subMenu"][subMenuIndex]["refresh"] == true))
   {
     spriteCurrent.deleteSprite();
     spriteCurrent.createSprite(screenW, screenH);
@@ -548,28 +548,13 @@ String getValueByPath(JsonDocument &doc, const char *path)
   return result;
 }
 
-/**
- * Draw a simple line graph in a TFT_eSprite using TFT_eSPI.
- *
- * Parameters:
- *  - spr         : The TFT_eSprite to draw on
- *  - x, y        : Top-left corner of the graph in the sprite
- *  - w, h        : Width and height of the graph area
- *  - data        : Pointer to an array of float values
- *
- * This function maps each data[i] to a Y coordinate within [0..h].
- *  Y = y + h - map(data[i] in [minVal..maxVal] -> [0..h])
- * Then draws lines between consecutive points.
- *
- * Example usage:
- *    float myData[5] = {10, 20, 25, 15, 30};
- *    drawLineGraph(spriteCurrent, 10, 10, 200, 100,
- *                  myData, 5, 0, 40, TFT_GREEN, TFT_BLACK,
- *                  true, TFT_WHITE);
- */
 void drawLineGraph(TFT_eSprite &spr, int x, int y, int w, int h, const float *data, size_t dataCount)
 {
-  // nimVal and maxVal are calculated from data array
+  // 1. Quick check: need at least 2 data points
+  if (dataCount < 2)
+    return;
+
+  // 2. Find min and max in one pass
   float minVal = data[0];
   float maxVal = data[0];
   for (size_t i = 1; i < dataCount; i++)
@@ -580,46 +565,57 @@ void drawLineGraph(TFT_eSprite &spr, int x, int y, int w, int h, const float *da
       maxVal = data[i];
   }
 
-  // If there aren't at least 2 data points, nothing to draw
-  if (dataCount < 2)
-    return;
+  // 3. Draw min/max labels
+  //    For consistent font usage, adjust as desired.
+  spr.setTextSize(1);         // small text
+  spr.setTextDatum(TR_DATUM); // 2 => right Top, or use custom
+  spr.setTextColor(TFT_BLACK);
 
-  // 4. Map each data point to screen coords and draw lines
+  // max label at top
+  spr.drawString(String(maxVal, 2), x - 3, y);
+  spr.drawFastHLine(x - 2, y, 5, TFT_BLACK);
+
+  // min label at bottom
+  spr.setTextDatum(BR_DATUM); // 8 => right bottom
+  spr.drawString(String(minVal, 2), x - 3, y + h);
+  spr.drawFastHLine(x - 2, y + h, 5, TFT_BLACK);
+
+  uint16_t gridColor = TFT_LIGHTGREY;
+
+  // 5. Map each data point to screen coords and draw lines
+  //    We'll color each segment green if slope is negative, red if slope is positive.
   for (size_t i = 0; i < dataCount - 1; i++)
   {
-    // Current point
     float val1 = data[i];
-    // Next point
     float val2 = data[i + 1];
 
-    // Map val1 from [minVal..maxVal] to [0..h]
-    int mappedY1 = (int)((val1 - minVal) * (h) / (maxVal - minVal));
-    // Clip to [0..h] just in case
+    int mappedY1 = (int)((val1 - minVal) * h / (maxVal - minVal));
+    int mappedY2 = (int)((val2 - minVal) * h / (maxVal - minVal));
+
     if (mappedY1 < 0)
       mappedY1 = 0;
     if (mappedY1 > h)
       mappedY1 = h;
-
-    // Map val2 similarly
-    int mappedY2 = (int)((val2 - minVal) * (h) / (maxVal - minVal));
     if (mappedY2 < 0)
       mappedY2 = 0;
     if (mappedY2 > h)
       mappedY2 = h;
 
-    // Convert to sprite coordinates (0 at top => 0 in sprite),
-    // but we want 0 at bottom => add y offset, invert vertical
-    int x1 = x + (int)((float)i * (float)w / (dataCount - 1));
+    int x1 = x + (int)((float)i * w / (dataCount - 1));
     int y1 = y + (h - mappedY1);
-    int x2 = x + (int)((float)(i + 1) * (float)w / (dataCount - 1));
+    int x2 = x + (int)((float)(i + 1) * w / (dataCount - 1));
     int y2 = y + (h - mappedY2);
 
-    uint16_t lineColor = TFT_WHITE;
-    if (y2 > y1)
-      lineColor = TFT_RED;
-    else
-      lineColor = TFT_GREEN;
-    // Draw the line
+    for (int py = y2; py < y + h; py += 5)
+    {
+      spr.drawPixel(x2, py, gridColor);
+    }
+
+    // Add a small vertical marker for each point, for reference
+    spr.drawFastVLine(x2, y + h - 2, 5, TFT_BLACK);
+
+    // If slope is up => green, slope is down => red
+    uint16_t lineColor = (y2 < y1) ? TFT_GREEN : TFT_RED;
     spr.drawLine(x1, y1, x2, y2, lineColor);
   }
 }
