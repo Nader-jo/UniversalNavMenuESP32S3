@@ -140,6 +140,24 @@ void loop()
       inSubMenu = false;
     }
   }
+
+  if (inSubMenu && (digitalRead(PIN_NEXT) == LOW))
+  {
+    JsonArray subArr = menuItems["menu"][currentScreenId]["subMenu"].as<JsonArray>();
+    if (!subArr.isNull() && subArr.size() > 0)
+    {
+
+      subMenuIndex = (subMenuIndex + 1) % subArr.size();
+      spriteNext.deleteSprite();
+      spriteNext.createSprite(screenW, screenH);
+      buildSubScreen(spriteNext, currentScreenId, subMenuIndex);
+      transitionScreen(spriteCurrent, spriteNext, 99);
+      spriteCurrent.deleteSprite();
+      spriteCurrent.createSprite(screenW, screenH);
+      buildSubScreen(spriteCurrent, currentScreenId, subMenuIndex);
+    }
+  }
+
   if (inSubMenu && (menuItems["menu"][currentScreenId]["subMenu"][subMenuIndex]["refresh"] == true))
   {
     spriteCurrent.deleteSprite();
@@ -201,6 +219,12 @@ void buildSubScreen(TFT_eSprite &spr, uint8_t screenId, uint8_t subIndex)
 
 void transitionScreen(TFT_eSprite &oldSpr, TFT_eSprite &newSpr, uint8_t direction)
 {
+  if (direction == 99)
+  {
+    newSpr.pushSprite(0, 0);
+    return;
+  }
+
   const int steps = 10;
   for (int i = 0; i <= steps; i++)
   {
