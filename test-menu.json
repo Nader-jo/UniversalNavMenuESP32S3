@@ -665,7 +665,7 @@
               "w": 68,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -675,7 +675,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "10 min"
             },
             {
@@ -685,7 +685,7 @@
               "w": 67,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -695,7 +695,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "15 min"
             },
             {
@@ -705,7 +705,7 @@
               "w": 68,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -715,7 +715,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "30 min"
             }
           ],
@@ -742,7 +742,7 @@
               "w": 67,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -752,7 +752,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "5 min"
             },
             {
@@ -782,7 +782,7 @@
               "w": 67,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -792,7 +792,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "15 min"
             },
             {
@@ -802,7 +802,7 @@
               "w": 68,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -812,7 +812,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "30 min"
             }
           ],
@@ -839,7 +839,7 @@
               "w": 67,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -849,7 +849,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "5 min"
             },
             {
@@ -859,7 +859,7 @@
               "w": 68,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -869,7 +869,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "10 min"
             },
             {
@@ -899,7 +899,7 @@
               "w": 68,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -909,7 +909,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "30 min"
             }
           ],
@@ -936,7 +936,7 @@
               "w": 67,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -946,7 +946,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "5 min"
             },
             {
@@ -956,7 +956,7 @@
               "w": 68,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -966,7 +966,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "10 min"
             },
             {
@@ -976,7 +976,7 @@
               "w": 67,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x4b0b",
               "bgColor": "0x0000"
             },
             {
@@ -986,7 +986,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x4b0b",
               "content": "15 min"
             },
             {

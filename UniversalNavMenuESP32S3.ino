@@ -462,8 +462,7 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc)
         }
         else if (String(url) == "getTimerCountdown")
         {
-          unsigned long defaultTimer = 300000UL; // 5 minutes default
-          unsigned long timerMs = (unsigned long)elem["timer"] * 1000 | defaultTimer;
+          unsigned long timerMs = (unsigned long)elem["timer"] * 1000 ;
           if (g_timer.duration != timerMs)
           {
             g_timer.running = true;
