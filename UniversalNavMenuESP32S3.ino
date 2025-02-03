@@ -204,12 +204,16 @@ void loop()
       spriteCurrent.deleteSprite();
       spriteCurrent.createSprite(screenW, screenH);
       buildScreen(spriteCurrent, currentScreenId);
+      g_timer.running  = false;
+      g_timer.flashing = false;
       inSubMenu = false;
     }
   }
 
   if (inSubMenu && (digitalRead(PIN_NEXT) == LOW))
   {
+    g_timer.running  = false;
+    g_timer.flashing = false;
     JsonArray subArr = menuItems["menu"][currentScreenId]["subMenu"].as<JsonArray>();
     if (!subArr.isNull() && subArr.size() > 0)
     {
@@ -242,12 +246,12 @@ void loop()
       spriteCurrent.deleteSprite();
       spriteCurrent.createSprite(screenW, screenH);
       buildSubScreen(spriteCurrent, currentScreenId, subMenuIndex);
-      inSubMenu = true;
+      spriteCurrent.pushSprite(0, 0);
     }
     else
     {
-      // blink every 300ms
-      if ((elapsed / 300) % 2 == 0)
+      // blink every 500ms
+      if ((elapsed / 500) % 2 == 0)
       {
         tft.fillScreen(TFT_YELLOW);
       }
@@ -458,53 +462,51 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc)
         }
         else if (String(url) == "getTimerCountdown")
         {
-          unsigned long timerMs = (unsigned long)elem["timer"] | 300000UL;
-          g_timer.running = true;
-          g_timer.flashing = false;
-          g_timer.duration = timerMs;
-          g_timer.endMillis = millis() + timerMs;
-
-          Serial.print("Timer started for ");
-          Serial.print(timerMs);
-          Serial.println("ms");
+          unsigned long defaultTimer = 300000UL; // 5 minutes default
+          unsigned long timerMs = (unsigned long)elem["timer"] * 1000 | defaultTimer;
+          if (g_timer.duration != timerMs)
+          {
+            g_timer.running = true;
+            g_timer.flashing = false;
+            g_timer.duration = timerMs;
+            g_timer.endMillis = millis() + timerMs;
+            g_timer.flashStartMillis = 0; // not flashing yet
+            Serial.printf("Timer started for %lu ms\n", timerMs);
+          }
           unsigned long nowMs = millis();
           if (g_timer.running)
           {
-            if (!g_timer.flashing)
+            long remaining = (long)g_timer.endMillis - (long)nowMs;
+            if (remaining <= 0)
             {
-              long remaining = (long)g_timer.endMillis - (long)nowMs;
-              if (remaining <= 0)
-              {
-                // Timer done => start flashing
-                g_timer.running = false;
-                g_timer.flashing = true;
-                g_timer.flashStartMillis = nowMs;
-                remaining = 0;
-              }
-
-              // Convert 'remaining' to MM:SS
-              // if we have a negative, just 00:00
-              long sec = remaining / 1000;
-              if (sec < 0)
-                sec = 0;
-
-              int minutes = sec / 60;
-              int seconds = sec % 60;
-
-              char buf[10];
-              sprintf(buf, "%02d:%02d", minutes, seconds);
-              finalText = String(buf);
+              // Timer done => go into flashing mode
+              g_timer.running = false;
+              g_timer.flashing = true;
+              g_timer.flashStartMillis = nowMs;
+              remaining = 0;
+              Serial.println("Timer ended -> start flashing");
             }
-            else
-            {
-              // We are in flashing mode. Maybe show "DONE!"
-              finalText = "DONE!";
-            }
+
+            long sec = remaining / 1000L;
+            if (sec < 0)
+              sec = 0;
+
+            int minutes = sec / 60;
+            int seconds = sec % 60;
+
+            char buf[10];
+            sprintf(buf, "%02d:%02d", minutes, seconds);
+            finalText = String(buf);
+          }
+          else if (g_timer.flashing)
+          {
+            finalText = "DONE!";
           }
           else
           {
-            // Not running => default text "..."
-            finalText = "TIMER?";
+            // If neither running nor flashing (e.g. repeated draws?)
+            // Show something else or blank
+            finalText = "00:00";
           }
         }
         else
