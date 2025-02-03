@@ -25,6 +25,7 @@ bool inSubMenu = false;
 uint8_t subMenuIndex = 0;
 int timeZone = 0;
 const char *city = "";
+bool isCountingDown = false;
 
 TFT_eSPI tft = TFT_eSPI();
 TFT_eSprite spriteCurrent = TFT_eSprite(&tft);
@@ -52,6 +53,23 @@ struct DataInfo
     updateInterval = 0;
     lastFetchTime = 0;
   }
+};
+
+struct TimerState
+{
+  bool running;
+  bool flashing;
+  unsigned long endMillis;
+  unsigned long flashStartMillis;
+  unsigned long duration; // for reference
+};
+
+static TimerState g_timer = {
+    false, // running
+    false, // flashing
+    0,     // endMillis
+    0,     // flashStart
+    0      // duration
 };
 
 // We'll store up to 10 data items
@@ -213,6 +231,31 @@ void loop()
     spriteCurrent.createSprite(screenW, screenH);
     buildSubScreen(spriteCurrent, currentScreenId, subMenuIndex);
     spriteCurrent.pushSprite(0, 0);
+  }
+  if (g_timer.flashing)
+  {
+    unsigned long elapsed = millis() - g_timer.flashStartMillis;
+    if (elapsed > 5000)
+    {
+      g_timer.flashing = false;
+      // rebuild the screen
+      spriteCurrent.deleteSprite();
+      spriteCurrent.createSprite(screenW, screenH);
+      buildSubScreen(spriteCurrent, currentScreenId, subMenuIndex);
+      inSubMenu = true;
+    }
+    else
+    {
+      // blink every 300ms
+      if ((elapsed / 300) % 2 == 0)
+      {
+        tft.fillScreen(TFT_YELLOW);
+      }
+      else
+      {
+        tft.fillScreen(TFT_BLACK);
+      }
+    }
   }
 }
 
@@ -412,6 +455,57 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc)
         else if (String(url) == "getDate")
         {
           finalText = rtc.getDate();
+        }
+        else if (String(url) == "getTimerCountdown")
+        {
+          unsigned long timerMs = (unsigned long)elem["timer"] | 300000UL;
+          g_timer.running = true;
+          g_timer.flashing = false;
+          g_timer.duration = timerMs;
+          g_timer.endMillis = millis() + timerMs;
+
+          Serial.print("Timer started for ");
+          Serial.print(timerMs);
+          Serial.println("ms");
+          unsigned long nowMs = millis();
+          if (g_timer.running)
+          {
+            if (!g_timer.flashing)
+            {
+              long remaining = (long)g_timer.endMillis - (long)nowMs;
+              if (remaining <= 0)
+              {
+                // Timer done => start flashing
+                g_timer.running = false;
+                g_timer.flashing = true;
+                g_timer.flashStartMillis = nowMs;
+                remaining = 0;
+              }
+
+              // Convert 'remaining' to MM:SS
+              // if we have a negative, just 00:00
+              long sec = remaining / 1000;
+              if (sec < 0)
+                sec = 0;
+
+              int minutes = sec / 60;
+              int seconds = sec % 60;
+
+              char buf[10];
+              sprintf(buf, "%02d:%02d", minutes, seconds);
+              finalText = String(buf);
+            }
+            else
+            {
+              // We are in flashing mode. Maybe show "DONE!"
+              finalText = "DONE!";
+            }
+          }
+          else
+          {
+            // Not running => default text "..."
+            finalText = "TIMER?";
+          }
         }
         else
         {

@@ -630,12 +630,310 @@
             {
               "type": "textDynamic",
               "x": 160,
-              "y": 85,
+              "y": 100,
               "size": 3,
               "datum": 4,
               "color": "0xFFFF",
               "bgColor": "0x0000",
-              "url": "getTime",
+              "url": "getTimerCountdown",
+              "timer": 300000,
+              "substringS": 0,
+              "substringE": 8
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 10,
+              "y": 10,
+              "w": 67,
+              "h": 30,
+              "r": 5,
+              "color": "0x9db6",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 43,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x9db6",
+              "content": "5 min"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 87,
+              "y": 10,
+              "w": 68,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 120,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "10 min"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 165,
+              "y": 10,
+              "w": 67,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 198,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "15 min"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 242,
+              "y": 10,
+              "w": 68,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 276,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "30 min"
+            }
+          ],
+          "refresh": true
+        },
+        {
+          "backgroundColor": "0x0000",
+          "elements": [
+            {
+              "type": "textDynamic",
+              "x": 160,
+              "y": 100,
+              "size": 3,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x0000",
+              "url": "getTimerCountdown",
+              "timer": 600000,
+              "substringS": 0,
+              "substringE": 8
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 10,
+              "y": 10,
+              "w": 67,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 43,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "5 min"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 87,
+              "y": 10,
+              "w": 68,
+              "h": 30,
+              "r": 5,
+              "color": "0x9db6",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 120,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x9db6",
+              "content": "10 min"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 165,
+              "y": 10,
+              "w": 67,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 198,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "15 min"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 242,
+              "y": 10,
+              "w": 68,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 276,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "30 min"
+            }
+          ],
+          "refresh": true
+        },
+        {
+          "backgroundColor": "0x0000",
+          "elements": [
+            {
+              "type": "textDynamic",
+              "x": 160,
+              "y": 100,
+              "size": 3,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x0000",
+              "url": "getTimerCountdown",
+              "timer": 900000,
+              "substringS": 0,
+              "substringE": 8
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 10,
+              "y": 10,
+              "w": 67,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 43,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "5 min"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 87,
+              "y": 10,
+              "w": 68,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 120,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "10 min"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 165,
+              "y": 10,
+              "w": 67,
+              "h": 30,
+              "r": 5,
+              "color": "0x9db6",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 198,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x9db6",
+              "content": "15 min"
+            },
+            {
+              "type": "fillSmoothRoundRect",
+              "x": 242,
+              "y": 10,
+              "w": 68,
+              "h": 30,
+              "r": 5,
+              "color": "0x7430",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "text",
+              "x": 276,
+              "y": 25,
+              "size": 2,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x7430",
+              "content": "30 min"
+            }
+          ],
+          "refresh": true
+        },
+        {
+          "backgroundColor": "0x0000",
+          "elements": [
+            {
+              "type": "textDynamic",
+              "x": 160,
+              "y": 100,
+              "size": 3,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x0000",
+              "url": "getTimerCountdown",
+              "timer": 1800000,
               "substringS": 0,
               "substringE": 8
             },
@@ -706,7 +1004,7 @@
               "w": 68,
               "h": 30,
               "r": 5,
-              "color": "0x7430",
+              "color": "0x9db6",
               "bgColor": "0x0000"
             },
             {
@@ -716,48 +1014,8 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x7430",
+              "bgColor": "0x9db6",
               "content": "30 min"
-            },
-            {
-              "type": "fillSmoothRoundRect",
-              "x": 10,
-              "y": 130,
-              "w": 80,
-              "h": 30,
-              "r": 5,
-              "color": "0x7430",
-              "bgColor": "0x0000"
-            },
-            {
-              "type": "text",
-              "x": 50,
-              "y": 145,
-              "size": 2,
-              "datum": 4,
-              "color": "0xFFFF",
-              "bgColor": "0x7430",
-              "content": "Start"
-            },
-            {
-              "type": "fillSmoothRoundRect",
-              "x": 240,
-              "y": 130,
-              "w": 80,
-              "h": 30,
-              "r": 5,
-              "color": "0x7430",
-              "bgColor": "0x0000"
-            },
-            {
-              "type": "text",
-              "x": 280,
-              "y": 145,
-              "size": 2,
-              "datum": 4,
-              "color": "0xFFFF",
-              "bgColor": "0x7430",
-              "content": "Back"
             }
           ],
           "refresh": true
