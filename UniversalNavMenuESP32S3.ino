@@ -7,9 +7,6 @@
 #include "midleFont.h"
 #include "bigFont.h"
 #include "tinyFont.h"
-// https://api.gemini.com/v2/ticker/btcusd
-// https://api.gemini.com/v2/ticker/ethusd
-// https://api.gemini.com/v2/ticker/solusd
 
 // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key} // get weather
 
@@ -133,8 +130,7 @@ void setup()
       g_dataItems[i].url = String(tempUrl);
       g_dataItems[i].jsonPath = String(tempPath);
       g_dataItems[i].updateInterval = (unsigned long)item["update"] | 1800000UL;
-      g_dataItems[i].lastFetchTime = 0;
-
+      g_dataItems[i].lastFetchTime = millis() - g_dataItems[i].updateInterval;
       // doc is already constructed in the constructor with capacity=1024
     }
   }
@@ -558,12 +554,16 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc)
           Serial.println(dataID);
           continue;
         }
+        Serial.print("Drawing graph for ID=");
+        Serial.println(dataID);
 
         // Now we simply read from info->doc, which has been updated in updateDataItems()
         JsonArray arr = info->doc[info->jsonPath].as<JsonArray>();
         if (!arr.isNull())
         {
           size_t arrSize = arr.size();
+          Serial.print("Data array size=");
+          Serial.println(arrSize);
           float *dataArray = (float *)malloc(arrSize * sizeof(float));
           if (dataArray)
           {
