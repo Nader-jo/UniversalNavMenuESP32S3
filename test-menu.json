@@ -636,9 +636,7 @@
               "color": "0xFFFF",
               "bgColor": "0x0000",
               "url": "getTimerCountdown",
-              "timer": 300000,
-              "substringS": 0,
-              "substringE": 8
+              "timer": 300
             },
             {
               "type": "fillSmoothRoundRect",
@@ -735,9 +733,7 @@
               "color": "0xFFFF",
               "bgColor": "0x0000",
               "url": "getTimerCountdown",
-              "timer": 600000,
-              "substringS": 0,
-              "substringE": 8
+              "timer": 600
             },
             {
               "type": "fillSmoothRoundRect",
@@ -834,9 +830,7 @@
               "color": "0xFFFF",
               "bgColor": "0x0000",
               "url": "getTimerCountdown",
-              "timer": 900000,
-              "substringS": 0,
-              "substringE": 8
+              "timer": 900
             },
             {
               "type": "fillSmoothRoundRect",
@@ -933,9 +927,7 @@
               "color": "0xFFFF",
               "bgColor": "0x0000",
               "url": "getTimerCountdown",
-              "timer": 1800000,
-              "substringS": 0,
-              "substringE": 8
+              "timer": 1800
             },
             {
               "type": "fillSmoothRoundRect",
