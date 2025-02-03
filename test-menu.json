@@ -1,4 +1,24 @@
 {
+  "data": [
+    {
+      "id": 0,
+      "url": "https://api.gemini.com/v2/ticker/btcusd",
+      "jsonPath": "changes",
+      "update": 1800000
+    },
+    {
+      "id": 1,
+      "url": "https://api.gemini.com/v2/ticker/ethusd",
+      "jsonPath": "changes",
+      "update": 1800000
+    },
+    {
+      "id": 2,
+      "url": "https://api.gemini.com/v2/ticker/solusd",
+      "jsonPath": "changes",
+      "update": 1800000
+    }
+  ],
   "menu": [
     {
       "id": 0,
@@ -281,7 +301,7 @@
             },
             {
               "type": "text",
-              "x": 253,
+              "x": 263,
               "y": 25,
               "size": 2,
               "datum": 4,
@@ -321,8 +341,7 @@
               "y": 55,
               "w": 220,
               "h": 90,
-              "url": "https://api.gemini.com/v2/ticker/btcusd",
-              "jsonPath": "changes"
+              "data": 0
             }
           ],
           "refresh": false
@@ -334,7 +353,7 @@
               "type": "fillSmoothRoundRect",
               "x": 10,
               "y": 10,
-              "w": 70,
+              "w": 93,
               "h": 30,
               "r": 5,
               "color": "0x7430",
@@ -342,7 +361,7 @@
             },
             {
               "type": "text",
-              "x": 45,
+              "x": 56,
               "y": 25,
               "size": 2,
               "datum": 4,
@@ -352,9 +371,9 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 90,
+              "x": 113,
               "y": 10,
-              "w": 70,
+              "w": 94,
               "h": 30,
               "r": 5,
               "color": "0x34f2",
@@ -362,7 +381,7 @@
             },
             {
               "type": "text",
-              "x": 125,
+              "x": 160,
               "y": 25,
               "size": 2,
               "datum": 4,
@@ -372,7 +391,7 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 170,
+              "x": 217,
               "y": 10,
               "w": 70,
               "h": 30,
@@ -382,7 +401,7 @@
             },
             {
               "type": "text",
-              "x": 205,
+              "x": 263,
               "y": 25,
               "size": 2,
               "datum": 4,
@@ -422,8 +441,7 @@
               "y": 55,
               "w": 220,
               "h": 90,
-              "url": "https://api.gemini.com/v2/ticker/ethusd",
-              "jsonPath": "changes"
+              "data": 1
             }
           ],
           "refresh": false
@@ -435,7 +453,7 @@
               "type": "fillSmoothRoundRect",
               "x": 10,
               "y": 10,
-              "w": 70,
+              "w": 93,
               "h": 30,
               "r": 5,
               "color": "0x7430",
@@ -443,7 +461,7 @@
             },
             {
               "type": "text",
-              "x": 45,
+              "x": 56,
               "y": 25,
               "size": 2,
               "datum": 4,
@@ -453,9 +471,9 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 90,
+              "x": 113,
               "y": 10,
-              "w": 70,
+              "w": 94,
               "h": 30,
               "r": 5,
               "color": "0x7430",
@@ -463,7 +481,7 @@
             },
             {
               "type": "text",
-              "x": 125,
+              "x": 160,
               "y": 25,
               "size": 2,
               "datum": 4,
@@ -473,9 +491,9 @@
             },
             {
               "type": "fillSmoothRoundRect",
-              "x": 170,
+              "x": 217,
               "y": 10,
-              "w": 70,
+              "w": 93,
               "h": 30,
               "r": 5,
               "color": "0x34f2",
@@ -483,7 +501,7 @@
             },
             {
               "type": "text",
-              "x": 205,
+              "x": 263,
               "y": 25,
               "size": 2,
               "datum": 4,
@@ -523,8 +541,7 @@
               "y": 55,
               "w": 220,
               "h": 90,
-              "url": "https://api.gemini.com/v2/ticker/solusd",
-              "jsonPath": "changes"
+              "data": 2
             }
           ],
           "refresh": false

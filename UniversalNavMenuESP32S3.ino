@@ -35,6 +35,32 @@ TFT_eSprite spriteNext = TFT_eSprite(&tft);
 ESP32Time rtc(0);
 StaticJsonDocument<2048> menuItems;
 
+// --------------- DataInfo Struct ---------------
+// Each data item in the top-level "data" array is stored here.
+struct DataInfo
+{
+  uint8_t id;
+  String url;
+  String jsonPath;
+  unsigned long updateInterval; // ms
+  unsigned long lastFetchTime;
+
+  // Provide a capacity for storing the fetched JSON
+  DynamicJsonDocument doc;
+
+  // Constructor explicitly initializes doc
+  DataInfo() : doc(1024)
+  {
+    id = 0;
+    updateInterval = 0;
+    lastFetchTime = 0;
+  }
+};
+
+// We'll store up to 10 data items
+static DataInfo g_dataItems[10];
+static size_t g_dataCount = 0;
+
 const char *server = "https://raw.githubusercontent.com/Nader-jo/UniversalNavMenuESP32S3/refs/heads/develop/test-menu.json";
 const char *ntpServer = "pool.ntp.org";
 const char *locationServer = "http://ip-api.com/json?fields=status,city,offset,query";
@@ -87,6 +113,32 @@ void setup()
   city = locData["city"];
   setTime();
   deserializeJson(menuItems, getData(server));
+
+  // Now parse top-level "data" array into g_dataItems
+  JsonArray dataArray = menuItems["data"].as<JsonArray>();
+  if (!dataArray.isNull())
+  {
+    g_dataCount = dataArray.size();
+    if (g_dataCount > 10)
+      g_dataCount = 10;
+
+    for (size_t i = 0; i < g_dataCount; i++)
+    {
+      JsonObject item = dataArray[i];
+      g_dataItems[i].id = item["id"] | 0;
+
+      const char *tempUrl = item["url"] | "https://example.com";
+      const char *tempPath = item["jsonPath"] | "changes";
+
+      g_dataItems[i].url = String(tempUrl);
+      g_dataItems[i].jsonPath = String(tempPath);
+      g_dataItems[i].updateInterval = (unsigned long)item["update"] | 1800000UL;
+      g_dataItems[i].lastFetchTime = 0;
+
+      // doc is already constructed in the constructor with capacity=1024
+    }
+  }
+
   screenCount = menuItems["menu"].size();
   spriteCurrent.deleteSprite();
   spriteCurrent.createSprite(screenW, screenH);
@@ -96,6 +148,7 @@ void setup()
 
 void loop()
 {
+  updateDataItems();
   if (!inSubMenu && (digitalRead(PIN_NEXT) == LOW))
   {
     nextScreenId = (currentScreenId + 1) % screenCount;
@@ -167,6 +220,35 @@ void loop()
   }
 }
 
+void updateDataItems()
+{
+  unsigned long now = millis();
+  for (size_t i = 0; i < g_dataCount; i++)
+  {
+    DataInfo &info = g_dataItems[i];
+    if ((now - info.lastFetchTime) >= info.updateInterval)
+    {
+      info.lastFetchTime = now;
+
+      // 1) fetch
+      String payload = getData(info.url);
+      DeserializationError err = deserializeJson(info.doc, payload);
+      if (err)
+      {
+        Serial.print("ERROR: parse data failed for ID=");
+        Serial.println(info.id);
+      }
+      else
+      {
+        Serial.print("Data updated for ID=");
+        Serial.print(info.id);
+        Serial.print(" from ");
+        Serial.println(info.url);
+      }
+    }
+  }
+}
+
 void setTime()
 {
   configTime(timeZone, 0, ntpServer);
@@ -221,6 +303,7 @@ void transitionScreen(TFT_eSprite &oldSpr, TFT_eSprite &newSpr, uint8_t directio
 {
   if (direction == 99)
   {
+    delay(150);
     newSpr.pushSprite(0, 0);
     return;
   }
@@ -451,26 +534,35 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc)
       }
       else if (strcmp(type, "graphDynamic") == 0)
       {
-        // Parse the element JSON
         int gx = elem["x"] | 0;
         int gy = elem["y"] | 0;
         int gw = elem["w"] | 200;
         int gh = elem["h"] | 100;
 
-        // data source
-        const char *url = elem["url"] | "";
-        const char *jsonPath = elem["jsonPath"] | "";
+        // The user uses "data": N to indicate which data ID to reference
+        uint8_t dataID = elem["data"] | 0;
 
-        // 1) Fetch the JSON
-        StaticJsonDocument<1024> fetchedData;
-        deserializeJson(fetchedData, getData(url));
+        // Find the matching item in g_dataItems
+        DataInfo *info = nullptr;
+        for (size_t i = 0; i < g_dataCount; i++)
+        {
+          if (g_dataItems[i].id == dataID)
+          {
+            info = &g_dataItems[i];
+            break;
+          }
+        }
+        if (!info)
+        {
+          Serial.print("No data item found for ID=");
+          Serial.println(dataID);
+          continue;
+        }
 
-        // 2) We expect "changes" (or whatever 'jsonPath') to be an array of strings
-        // Convert them to floats
-        JsonArray arr = fetchedData.as<JsonObject>()[jsonPath].as<JsonArray>();
+        // Now we simply read from info->doc, which has been updated in updateDataItems()
+        JsonArray arr = info->doc[info->jsonPath].as<JsonArray>();
         if (!arr.isNull())
         {
-          // Copy them into a temporary float array
           size_t arrSize = arr.size();
           float *dataArray = (float *)malloc(arrSize * sizeof(float));
           if (dataArray)
@@ -479,9 +571,7 @@ void drawSpriteFromJson(TFT_eSprite &spr, JsonObject doc)
             {
               dataArray[i] = arr[i].as<float>();
             }
-            // 3) Draw the line graph
-            drawLineGraph(spr, gx, gy, gw, gh,
-                          dataArray, arrSize);
+            drawLineGraph(spr, gx, gy, gw, gh, dataArray, arrSize);
             free(dataArray);
           }
         }
