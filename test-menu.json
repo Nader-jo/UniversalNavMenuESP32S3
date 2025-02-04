@@ -1211,18 +1211,18 @@
               "type": "fillSmoothCircle",
               "x": 50,
               "y": 45,
-              "r": 20,
+              "r": 15,
               "color": "0x07FF",
-              "bgColor": "0x0000"
+              "bgColor": "0x7430"
             },
             {
               "type": "fillTriangle",
               "x0": 50,
-              "y0": 35,
+              "y0": 20,
               "x1": 40,
-              "y1": 50,
+              "y1": 40,
               "x2": 60,
-              "y2": 50,
+              "y2": 40,
               "color": "0x07FF"
             },
             {
