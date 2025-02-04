@@ -1208,6 +1208,24 @@
               "bgColor": "0x0000"
             },
             {
+              "type": "fillSmoothCircle",
+              "x": 50,
+              "y": 45,
+              "r": 20,
+              "color": "0x07FF",
+              "bgColor": "0x0000"
+            },
+            {
+              "type": "fillTriangle",
+              "x0": 50,
+              "y0": 35,
+              "x1": 40,
+              "y1": 50,
+              "x2": 60,
+              "y2": 50,
+              "color": "0x07FF"
+            },
+            {
               "type": "fillSmoothRoundRect",
               "x": 10,
               "y": 90,
