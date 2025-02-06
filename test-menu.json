@@ -1249,7 +1249,7 @@
               "type": "text",
               "x": 50,
               "y": 70,
-              "size": 1,
+              "size": 2,
               "datum": 4,
               "color": "0xFFFF",
               "bgColor": "0x0000",
