@@ -1211,7 +1211,7 @@
               "type": "fillSmoothCircle",
               "x": 50,
               "y": 45,
-              "r": 12,
+              "r": 11,
               "color": "0x07FF",
               "bgColor": "0x7430"
             },
@@ -1226,6 +1226,16 @@
               "color": "0x07FF"
             },
             {
+              "type": "text",
+              "x": 50,
+              "y": 70,
+              "size": 1,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x0000",
+              "content": "Humidity: 50%"
+            },
+            {
               "type": "fillSmoothRoundRect",
               "x": 10,
               "y": 90,
@@ -1236,6 +1246,16 @@
               "bgColor": "0x0000"
             },
             {
+              "type": "text",
+              "x": 50,
+              "y": 70,
+              "size": 1,
+              "datum": 4,
+              "color": "0xFFFF",
+              "bgColor": "0x0000",
+              "content": "Humidity: 50%"
+            },
+            {
               "type": "fillSmoothRoundRect",
               "x": 100,
               "y": 10,
@@ -1244,6 +1264,14 @@
               "r": 5,
               "color": "0x7430",
               "bgColor": "0x0000"
+            },
+            {
+              "type": "fillSmoothCircle",
+              "x": 150,
+              "y": 50,
+              "r": 30,
+              "color": "0xffe0",
+              "bgColor": "0x7430"
             },
             {
               "type": "fillSmoothRoundRect",
