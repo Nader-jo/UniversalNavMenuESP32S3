@@ -1229,11 +1229,11 @@
               "type": "text",
               "x": 50,
               "y": 70,
-              "size": 1,
+              "size": 2,
               "datum": 4,
               "color": "0xFFFF",
               "bgColor": "0x0000",
-              "content": "Humidity: 50%"
+              "content": "H:50%"
             },
             {
               "type": "fillSmoothRoundRect",
@@ -1244,16 +1244,6 @@
               "r": 5,
               "color": "0x7430",
               "bgColor": "0x0000"
-            },
-            {
-              "type": "text",
-              "x": 50,
-              "y": 70,
-              "size": 2,
-              "datum": 4,
-              "color": "0xFFFF",
-              "bgColor": "0x0000",
-              "content": "Humidity: 50%"
             },
             {
               "type": "fillSmoothRoundRect",
