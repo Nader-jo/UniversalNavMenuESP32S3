@@ -8,7 +8,7 @@
 #include "bigFont.h"
 #include "tinyFont.h"
 
-// https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key} // get weather
+// https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API key}
 
 static const int screenW = 320;
 static const int screenH = 170;

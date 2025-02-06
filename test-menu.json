@@ -1211,7 +1211,7 @@
               "type": "fillSmoothCircle",
               "x": 50,
               "y": 45,
-              "r": 15,
+              "r": 12,
               "color": "0x07FF",
               "bgColor": "0x7430"
             },
