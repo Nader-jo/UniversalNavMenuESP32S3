@@ -1275,18 +1275,18 @@
             },
             {
               "type": "fillSmoothCircle",
-              "x": 160,
+              "x": 170,
               "y": 55,
-              "r": 20,
-              "color": "0x0000",
+              "r": 25,
+              "color": "0xFFFF",
               "bgColor": "0x7430"
             },
             {
               "type": "fillSmoothCircle",
               "x": 140,
-              "y": 7,
+              "y": 70,
               "r": 25,
-              "color": "0x0000",
+              "color": "0xFFFF",
               "bgColor": "0x7430"
             },
             {
