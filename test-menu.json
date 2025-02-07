@@ -1283,9 +1283,9 @@
             },
             {
               "type": "fillSmoothCircle",
-              "x": 135,
-              "y": 80,
-              "r": 20,
+              "x": 130,
+              "y": 73,
+              "r": 22,
               "color": "0xFFFF",
               "bgColor": "0x7430"
             },
@@ -1296,6 +1296,14 @@
               "r": 25,
               "color": "0xFFFF",
               "bgColor": "0x7430"
+            },
+            {
+              "type":"fillRect",
+              "x": 130,
+              "y": 48,
+              "w": 55,
+              "h": 44,
+              "color": "0xFFFF"
             },
             {
               "type": "fillSmoothRoundRect",
