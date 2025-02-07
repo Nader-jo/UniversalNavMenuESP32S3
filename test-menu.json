@@ -1268,14 +1268,14 @@
             {
               "type": "fillSmoothCircle",
               "x": 145,
-              "y": 45,
+              "y": 50,
               "r": 25,
               "color": "0xffe0",
               "bgColor": "0x7430"
             },
             {
               "type": "fillSmoothCircle",
-              "x": 170,
+              "x": 160,
               "y": 55,
               "r": 25,
               "color": "0xFFFF",
