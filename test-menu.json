@@ -1232,7 +1232,7 @@
               "size": 2,
               "datum": 4,
               "color": "0xFFFF",
-              "bgColor": "0x07FF",
+              "bgColor": "0x7430",
               "content": "H:50%"
             },
             {
@@ -1249,7 +1249,7 @@
               "type": "text",
               "x": 50,
               "y": 110,
-              "size": 1,
+              "size": 2,
               "datum": 4,
               "color": "0xFFFF",
               "bgColor": "0x7430",
@@ -1283,7 +1283,15 @@
             },
             {
               "type": "fillSmoothCircle",
-              "x": 140,
+              "x": 135,
+              "y": 70,
+              "r": 25,
+              "color": "0xFFFF",
+              "bgColor": "0x7430"
+            },
+            {
+              "type": "fillSmoothCircle",
+              "x": 185,
               "y": 70,
               "r": 25,
               "color": "0xFFFF",
