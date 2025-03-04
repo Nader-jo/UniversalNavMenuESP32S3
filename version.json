@@ -1,9 +1,4 @@
 {
-  "Configurations": [
-    {
-      "Board": "ESP32_DEV",
-      "Version": "1.0.1",
-      "URL": "http://github.com/Nader-jo/UniversalNavMenuESP32S3/raw/develop/firmware_1.0.1.bin"
-    }
-  ]
+  "latest_version": "1.0.1",
+  "firmware_url": "http://github.com/Nader-jo/UniversalNavMenuESP32S3/raw/develop/firmware_1.0.1.bin"
 }
